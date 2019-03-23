@@ -1,0 +1,48 @@
+<!-- <div *ngIf="coordinates">
+    <agm-map [latitude]="coordinates.latitude" [longitude]="coordinates.longitude" [zoom]=15 (mapClick)="onChoseLocation($event)">
+        <agm-marker *ngIf="coordinates" [latitude]="coordinates.latitude" [longitude]="coordinates.longitude">
+        </agm-marker>
+    </agm-map>
+</div> -->
+
+<!-- <div class="container">
+    <h1>Google Maps Places Autocomplete Using Angular</h1>
+    <div class="form-group">
+        <input type="text" placeholder="Search for location" autocorrect="off" autocapitalize="off" spellcheck="off" class="form-control"
+            #search>
+    </div>
+</div> -->
+
+<div>
+    <h1>
+        Welcome to {{ title }}!
+    </h1>
+</div>
+
+<div class="input-container">
+    <input type="text" class="google-place-input" google-place (onSelect)="setAddress($event)" placeholder="Type to search..">
+    <!-- Displaying the content of the address object received from our event emitter -->
+    <ul>
+        <!-- <li *ngFor="let key of addrKeys">
+            <span>{{key}}</span>:
+            <span>{{addr[key]}}</span>
+        </li> -->
+    </ul>
+</div>
+
+<div *ngIf="distArrBool">
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Distance</th>
+        </tr>
+        <tr *ngFor="let m of marketBrands; let d of distArr">
+            <td>{{m.name}}</td>
+            <td>{{m.address}}</td>
+        </tr>
+        <tr *ngFor="let d of distArr">
+            <td>{{d}}</td>
+        </tr>
+    </table>
+</div>
